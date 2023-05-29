@@ -1,0 +1,14 @@
+# Source: gitignore/Node.gitignore 
+# Link: https://github.com/github/gitignore/blob/main/Node.gitignore
+
+# Dependency directories
+node_modules/
+
+# Environments
+.env
+
+# VS Code specific
+.vscode
+
+# Mac specific
+.DS_Store
