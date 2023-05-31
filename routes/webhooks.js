@@ -8,24 +8,20 @@ const router = express.Router()
 const { sendNotification } = require('../notify')
 
 // POST (new notification)
-router.post('/', async(req,res) => {
+router.get('/', async(req,res) => {
     try {
         // Extracts event ID from URL
         // const eventId = req.params.eventId
     
         // Extracts notification data from request body
-        const notification = req.body
+        // const notification = req.body
     
         // Sends notification to all subscribers of the event
-        console.log(`Stub notification sent for 
-            \neventID: ${eventID}
-            \nwith notification: ${notification}`)
+        console.log(`Request body: ${req.body}`);
         // await sendNotification(eventId, notification)
     
         // Sends response
-        res.send(`Stub notification sent for 
-            \neventID: ${eventID}
-            \nwith notification: ${notification}`)
+        res.send(`Success`)
     } catch (error) {
         res.status(400).send({message:error})
     }
