@@ -14,6 +14,11 @@ const bodyParser = require('body-parser')
 const app = express()
 app.use(bodyParser.json())
 
+// Imports routes
+const webhooksRoute = require('./routes/webhooks')
+
+// Initialises routes
+app.use('/webhooks', webhooksRoute)
 
 // Adds homepage route
 app.get('/', (req,res)=> {
