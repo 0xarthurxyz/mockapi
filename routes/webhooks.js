@@ -8,7 +8,7 @@ const router = express.Router()
 const { sendNotification } = require('../notify')
 
 // POST (new notification)
-router.post('/:eventId', verifyToken, async(req,res) => {
+router.post('/:eventId', async(req,res) => {
     try {
         // Extracts event ID from URL
         const eventId = req.params.eventId
