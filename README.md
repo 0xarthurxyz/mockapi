@@ -84,9 +84,38 @@ const { restart } = require('nodemon')
 const bodyParser = require('body-parser') 
 ```
 
+Currently request fails in Postman with `400 Bad request` error 
+"The request cannot be fulfilled due to bad syntax."
+
+Endpoint: http://localhost:3000/webhooks/
 
 
+Body:
 
+```json
+{
+    "text": "hello world",
+    "date": "Wed, May 31"
+}
+```
+
+Response
+
+```json
+{
+    "message": {}
+}
+```
+
+Changing to `GET` works 
+
+Endpoint: http://localhost:3000/webhooks
+
+Response:
+
+```txt
+Success
+```
 
 
 <!-- Hyperlinks -->
