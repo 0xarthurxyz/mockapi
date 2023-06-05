@@ -4,9 +4,6 @@ const express = require('express')
 // Initialises express router
 const router = express.Router()
 
-// Imports functions
-const { sendNotification } = require('../notify')
-
 // POST (new notification)
 router.get('/', async(req,res) => {
     try {
