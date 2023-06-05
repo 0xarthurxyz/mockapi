@@ -10,7 +10,7 @@ router.post('/', async(req,res) => {
     try {
         console.log(`New request with body:`);
         console.log(req.body);
-        res.send(`Success`)
+        res.send(`Mock request successful!`)
     } catch (error) {
         res.status(400).send({message:error})
     }

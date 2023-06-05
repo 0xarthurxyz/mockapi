@@ -21,7 +21,7 @@ app.use('/mock', mockRoute)
 
 // Adds homepage route
 app.get('/', (req,res)=> {
-    res.send('Mock API endpoint is running!')
+    res.send('Mock API server is running!')
 })
 
 // Starts the server
