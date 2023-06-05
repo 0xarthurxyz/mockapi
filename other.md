@@ -117,6 +117,57 @@ Response:
 Success
 ```
 
+## `console.log` is not printing the request body as expected
+
+```js
+router.post('/', async(req,res) => {
+    try {
+        console.log(`New request with body: ${req.body}`);
+        ...
+```
+
+Console shows:
+
+```zsh
+Server is up and running at http://localhost:3000 ...
+New request with body: [object Object]
+```
+
+Check: Console logging some arbitrary JSON should work. 
+
+Tested in node:
+
+```zsh
+~/Documents/apitest main $ node
+Welcome to Node.js v18.3.0.
+Type ".help" for more information.
+> console.log({"text": "hello"})
+{ text: 'hello' }
+```
+
+Problem 1: I formatted request body as raw > text and not raw > JSON in Postman.
+
+<img src="assets/images/postman-raw-text.png" width="450">
+
+<img src="assets/images/postman-raw-json.png" width="450">
+
+Success with 
+
+```js
+router.post('/', async(req,res) => {
+    try {
+        console.log(`New request with body:`);
+        console.log(req.body);
+        ...
+```
+
+```zsh
+New request with body:
+{ text: 'hello world' }
+```
+
+Problem 2: console logging request with dollar sign notation `${...}` doesn't work
+
 
 <!-- Hyperlinks -->
 
