@@ -1,126 +1,29 @@
+# Mock client
 
-
-Create new directory
-
-```zsd
-mkdir apiptest
-cd apitest
-npm init
-code .
-```
-
-Add `.gitignore` file
-
-```ini
-# Source: gitignore/Node.gitignore 
-# Link: https://github.com/github/gitignore/blob/main/Node.gitignore
-
-# Dependency directories
-node_modules/
-
-# Environments
-.env
-
-# VS Code specific
-.vscode
-
-# Mac specific
-.DS_Store
-```
-
-
-Install MVP dependencies
+Start server using
 
 ```zsh
-npm install express
-npm install nodemon 
-npm install body-parser
+npm start
 ```
 
-+   [`body-parser`][npm body-parser], which provides the application 
-    with functionality to parse HTTP responses.
-+   [`express`][npm express], which provides the application with the 
-    necessary web server functionality.
-+   [`nodemon`][npm nodemon], which helps restart the Node.js application 
-    every time a relevant change occurs to simplify the development of the app locally.
+Should show the following on the console:
 
+```zsh
+> apitest@1.0.0 start
+> nodemon app.js
 
-To make use of the functionality in the `nodemon` library, I updated the `package.json` file as follows:
-
-```json
-"scripts": {
-  "start":"nodemon app.js"
-}
+[nodemon] 2.0.22
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node app.js`
+Server is up and running at http://localhost:3000 ...
 ```
 
-Using JSDoc decorator 
+You can test the server is running by:
 
-Source: [jsdoc.app @use JSDoc][jdoc @description]
+1.  opening in your browser
+2.  typing `curl http://localhost:3000` in your terminal
+3.  sending an empty HTTP GET request to `http://localhost:3000` from your preferred API tool 
+    (e.g. Postman)
 
-```js
-/**
- * @param {number} a
- * @param {number} b
- * @returns {number}
- * @description Add two numbers.
- */
-function add(a, b) {
-    return a + b;
-}
-```
-
-Create `app.js` file and start wih minimal imports
-
-```js
-// Imports libraries
-
-// Provides the application with the necessary web server functionality.
-const express = require('express')
-
-// Restarts Node.js application every time a relevant change occurs to simplify local development.
-const { restart } = require('nodemon')
-
-// Provides the application with functionality to parse HTTP responses.
-const bodyParser = require('body-parser') 
-```
-
-Currently request fails in Postman with `400 Bad request` error 
-"The request cannot be fulfilled due to bad syntax."
-
-Endpoint: http://localhost:3000/webhooks/
-
-
-Body:
-
-```json
-{
-    "text": "hello world",
-    "date": "Wed, May 31"
-}
-```
-
-Response
-
-```json
-{
-    "message": {}
-}
-```
-
-Changing to `GET` works 
-
-Endpoint: http://localhost:3000/webhooks
-
-Response:
-
-```txt
-Success
-```
-
-
-<!-- Hyperlinks -->
-
-[jdoc @description]: https://jsdoc.app/tags-description.html
-[npm body-parser]: https://www.npmjs.com/package/body-parser
-[npm express]: https://www.npmjs.com/package/express
-[npm nodemon]: https://www.npmjs.com/package/nodemon
