@@ -1,4 +1,5 @@
 // Imports libraries
+const { json } = require('body-parser');
 const express = require('express')
 
 // Initialises express router
@@ -7,7 +8,8 @@ const router = express.Router()
 // Mock endpoint
 router.post('/', async(req,res) => {
     try {
-        console.log(`Request body: ${req.body}`);
+        console.log(`New request with body:`);
+        console.log(req.body);
         res.send(`Success`)
     } catch (error) {
         res.status(400).send({message:error})
