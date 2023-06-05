@@ -14,10 +14,10 @@ const app = express()
 app.use(bodyParser.json())
 
 // Imports routes
-const webhooksRoute = require('./routes/webhooks')
+const mockRoute = require('./routes/mock')
 
 // Initialises routes
-app.use('/webhooks', webhooksRoute)
+app.use('/mock', mockRoute)
 
 // Adds homepage route
 app.get('/', (req,res)=> {
