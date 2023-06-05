@@ -1,4 +1,4 @@
-# Mock client
+# Mock API
 
 ## Get started
 
