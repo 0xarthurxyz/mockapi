@@ -1,11 +1,10 @@
 // Imports libraries
-const { json } = require('body-parser');
 const express = require('express')
 
 // Initialises express router
 const router = express.Router()
 
-// Mock endpoint
+// Mocks POST endpoint
 router.post('/', async(req,res) => {
     try {
         console.log(`New request with body:`);
