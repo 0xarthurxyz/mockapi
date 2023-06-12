@@ -8,7 +8,9 @@ Start the mock API by typing this into your terminal:
 npm start
 ```
 
-You should see a similar output in your terminal:
+To terminate the mock API server, press `Ctrl + C` in your terminal.
+
+If you're API server is running correctly, you should see a similar output in your terminal:
 
 ```zsh
 > apitest@1.0.0 start
@@ -22,9 +24,25 @@ You should see a similar output in your terminal:
 Server is up and running at http://localhost:3000 ...
 ```
 
+If you are confused about what `nodemon` is, don't worry. `nodemon` is a tool that helps develop 
+node.js based applications by automatically restarting the node application when file changes in 
+the directory are detected. This simply means that you don't have to restart the mock API server
+every time you make a change to the code. Every time you save a change to the code, `nodemon` will
+automatically restart the mock API server for you so that you can see the changes you made.
+
 ## Use
 
-You can make HTTP POST requests against the `/mock` endpoint with arbitrary payload, e.g.
+### Mock endpoint
+
+You can make HTTP POST requests with arbitrary JSON payloads:
+
++   to the `/mock` endpoint (at `http://localhost:3000/mock`), and
++   to the `/mock/echo` endpoint (at `http://localhost:3000/mock`).
+
+Nothing will happen with the JSON payload you submit, because the mock API server is not designed 
+to do anything with your request.
+
+For example, you can send the following HTTP POST request to the `/mock` endpoint:
 
 ```JSON
 {
@@ -32,7 +50,8 @@ You can make HTTP POST requests against the `/mock` endpoint with arbitrary payl
 }
 ```
 
-If your request is successful, you should received a HTTP response with the following text:
+Regardless of the payload you send, if your request is successful, you should received a HTTP 
+response with the following text:
 
 ```zsh
 Mock request successful!
