@@ -14,27 +14,7 @@ npm start
 
 To terminate the mock API server, press `Ctrl + C` in your terminal.
 
-If you're API server is running correctly, you should see a similar output in your terminal:
-
-```zsh
-> apitest@1.0.0 start
-> nodemon app.js
-
-[nodemon] 2.0.22
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching path(s): *.*
-[nodemon] watching extensions: js,mjs,json
-[nodemon] starting `node app.js`
-Server is up and running at http://localhost:3000 ...
-```
-
-If you are confused about what `nodemon` is, don't worry. `nodemon` is a tool that helps develop 
-node.js based applications by automatically restarting the node application when file changes in 
-the directory are detected. This simply means that you don't have to restart the mock API server
-every time you make a change to the code. Every time you save a change to the code, `nodemon` will
-automatically restart the mock API server for you so that you can see the changes you made.
-
-## Use
+## Usage
 
 ### Mock endpoint
 
@@ -63,6 +43,20 @@ Mock request successful!
 
 ## Debugging
 
+If you're API server is running correctly, you should see a similar output in your terminal:
+
+```zsh
+> apitest@1.0.0 start
+> nodemon app.js
+
+[nodemon] 2.0.22
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node app.js`
+Server is up and running at http://localhost:3000 ...
+```
+
 If you are not sure the mock API server is running, you can check by:
 
 1.  opening your browser at `http://localhost:3000`
@@ -75,3 +69,9 @@ You will know your server is running correctly if you see the following message:
 ```zsh
 Mock API server is running!
 ```
+
+If you are confused about what `nodemon` is, don't worry. `nodemon` is a tool that helps develop 
+node.js based applications by automatically restarting the node application when file changes in 
+the directory are detected. This simply means that you don't have to restart the mock API server
+every time you make a change to the code. Every time you save a change to the code, `nodemon` will
+automatically restart the mock API server for you so that you can see the changes you made.
