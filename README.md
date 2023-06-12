@@ -1,5 +1,9 @@
 # Mock API
 
+A simple mock API server for testing purposes.
+
+<img src="assets/images/homepage-API-response.png" width="450">
+
 ## Get started
 
 Start the mock API by typing this into your terminal:
